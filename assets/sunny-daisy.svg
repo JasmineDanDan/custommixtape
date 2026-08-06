@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <defs>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fff49a"/>
+      <stop offset=".55" stop-color="#f8dc56"/>
+      <stop offset="1" stop-color="#f5ca48"/>
+    </linearGradient>
+    <filter id="paper"><feTurbulence baseFrequency=".025" numOctaves="3" seed="7" type="fractalNoise"/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .10 0"/></filter>
+    <g id="daisy">
+      <g fill="#fffdf3" stroke="#f4eee0" stroke-width="2">
+        <ellipse rx="7" ry="23" transform="rotate(0) translate(0 -24)"/>
+        <ellipse rx="7" ry="23" transform="rotate(45) translate(0 -24)"/>
+        <ellipse rx="7" ry="23" transform="rotate(90) translate(0 -24)"/>
+        <ellipse rx="7" ry="23" transform="rotate(135) translate(0 -24)"/>
+        <ellipse rx="7" ry="23" transform="rotate(180) translate(0 -24)"/>
+        <ellipse rx="7" ry="23" transform="rotate(225) translate(0 -24)"/>
+        <ellipse rx="7" ry="23" transform="rotate(270) translate(0 -24)"/>
+        <ellipse rx="7" ry="23" transform="rotate(315) translate(0 -24)"/>
+      </g>
+      <circle r="13" fill="#edb633"/><circle r="6" fill="#d79b20" opacity=".55"/>
+    </g>
+    <g id="leaf" fill="#82b838"><ellipse rx="9" ry="18" transform="rotate(-43) translate(-5)"/><ellipse rx="9" ry="18" transform="rotate(43) translate(5)"/></g>
+  </defs>
+  <rect width="720" height="420" fill="url(#sun)"/>
+  <path d="M-30 90C130 20 220 145 370 64S610 4 760 88M-20 310c150-86 262 43 397-27s218-73 366-10" fill="none" stroke="#fff8b8" stroke-width="38" opacity=".22"/>
+  <rect width="720" height="420" filter="url(#paper)" opacity=".72"/>
+  <use href="#daisy" transform="translate(78 78) scale(.8) rotate(-8)"/>
+  <use href="#daisy" transform="translate(304 125) scale(.62) rotate(14)"/>
+  <use href="#daisy" transform="translate(610 75) scale(.82) rotate(-11)"/>
+  <use href="#daisy" transform="translate(155 335) scale(.72) rotate(18)"/>
+  <use href="#daisy" transform="translate(530 320) scale(.58) rotate(-20)"/>
+  <use href="#leaf" transform="translate(205 63) scale(.7)"/>
+  <use href="#leaf" transform="translate(420 245) scale(.55) rotate(20)"/>
+  <use href="#leaf" transform="translate(670 360) scale(.65) rotate(-15)"/>
+  <circle cx="35" cy="210" r="3" fill="#fffbe5"/><circle cx="360" cy="355" r="4" fill="#fffbe5"/><circle cx="675" cy="190" r="3" fill="#fffbe5"/>
+</svg>

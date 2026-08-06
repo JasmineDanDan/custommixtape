@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#071d55"/><stop offset=".58" stop-color="#0b3979"/><stop offset="1" stop-color="#12648b"/></linearGradient>
+    <radialGradient id="moon"><stop stop-color="#fffcc6"/><stop offset=".68" stop-color="#ffe66d"/><stop offset="1" stop-color="#efbd3d"/></radialGradient>
+    <linearGradient id="jar" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9be4d0" stop-opacity=".85"/><stop offset=".55" stop-color="#60c8d5" stop-opacity=".55"/><stop offset="1" stop-color="#237fa9" stop-opacity=".7"/></linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <g id="spark" fill="#ffe979"><circle r="2.5"/><path d="M0-8V8M-8 0H8" stroke="#ffe979" stroke-width="1.5"/></g>
+  </defs>
+  <rect width="720" height="420" fill="url(#night)"/>
+  <circle cx="500" cy="86" r="57" fill="#ffdc4c" opacity=".24" filter="url(#glow)"/><circle cx="500" cy="86" r="43" fill="url(#moon)"/>
+  <circle cx="486" cy="80" r="2" fill="#bd9c43"/><circle cx="514" cy="80" r="2" fill="#bd9c43"/><path d="M487 96q13 10 26 0" fill="none" stroke="#c59d3b" stroke-width="2" stroke-linecap="round"/>
+  <g fill="#ffe66d" filter="url(#glow)"><path d="M96 78l4 9 10 1-8 7 3 10-9-5-9 5 3-10-8-7 10-1z"/><path d="M610 142l3 7 8 1-6 5 2 8-7-4-7 4 2-8-6-5 8-1z"/></g>
+  <path d="M0 330C130 255 226 351 350 296s245-52 370 18v106H0z" fill="#092c58"/><path d="M0 355c118-37 213 22 337-7s251-10 383 32v40H0z" fill="#061d3e"/>
+  <g transform="translate(330 245)"><rect x="-47" y="-46" width="94" height="118" rx="19" fill="url(#jar)" stroke="#d5f4de" stroke-width="5"/><rect x="-39" y="-59" width="78" height="18" rx="6" fill="#ddc596" stroke="#f9e8bb" stroke-width="4"/><ellipse cy="-46" rx="34" ry="7" fill="#785d39" opacity=".35"/><path d="M-34 44q35-24 68 0" fill="#7bd5be" opacity=".45"/><use href="#spark" x="-20" y="5"/><use href="#spark" x="16" y="-18" transform="scale(.8)"/><use href="#spark" x="24" y="31" transform="scale(.65)"/></g>
+  <path d="M278 252c-25-38-51-62-81-71M290 252c-2-48 4-85 21-112M380 252c17-47 40-75 71-99" fill="none" stroke="#6faf83" stroke-width="4" opacity=".72"/>
+  <g fill="#ffe979"><circle cx="278" cy="164" r="3"/><circle cx="302" cy="129" r="2"/><circle cx="418" cy="151" r="3"/><circle cx="451" cy="126" r="2"/><circle cx="254" cy="210" r="2"/><circle cx="404" cy="202" r="2"/></g>
+  <g fill="#fff7b8" opacity=".8"><circle cx="40" cy="35" r="1.5"/><circle cx="168" cy="56" r="2"/><circle cx="246" cy="93" r="1.5"/><circle cx="383" cy="42" r="2"/><circle cx="580" cy="48" r="1.5"/><circle cx="684" cy="72" r="2"/><circle cx="655" cy="226" r="1.5"/></g>
+</svg>

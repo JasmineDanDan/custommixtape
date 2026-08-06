@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420">
+  <defs>
+    <linearGradient id="cream" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fffdf0"/><stop offset="1" stop-color="#f7edc9"/></linearGradient>
+    <filter id="grain"><feTurbulence baseFrequency=".45" numOctaves="2" seed="12"/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 .035 0"/></filter>
+    <g id="sprig" fill="none" stroke="#71804b" stroke-width="3" stroke-linecap="round">
+      <path d="M0 52C8 34 18 18 34 2"/><path d="M8 39l-15-8M14 29l16 3M21 19l-11-10M27 10l13 1"/>
+      <g fill="#8b9657" stroke="none"><ellipse cx="-3" cy="30" rx="7" ry="13" transform="rotate(-48 -3 30)"/><ellipse cx="31" cy="31" rx="7" ry="13" transform="rotate(51 31 31)"/><ellipse cx="10" cy="8" rx="6" ry="11" transform="rotate(-40 10 8)"/></g>
+    </g>
+    <g id="coral"><path d="M0 54C5 36 9 19 7 0" stroke="#de766b" stroke-width="3" fill="none"/><g fill="#ef8174"><path d="M5 39l-17-12 16 4-8-16 14 13 2-19 6 22 15-11-13 20z"/><path d="M7 16L-3 3 10 8 14-5l4 17 14-4-13 12z"/></g></g>
+    <g id="tiny-flower"><path d="M0 47V12" stroke="#71804b" stroke-width="2"/><g fill="#ef7f72"><circle cx="0" cy="7" r="5"/><circle cx="-6" cy="2" r="5"/><circle cx="6" cy="2" r="5"/><circle cy="-4" r="5"/></g><circle cy="2" r="3" fill="#e4b842"/></g>
+  </defs>
+  <rect width="720" height="420" fill="url(#cream)"/><rect width="720" height="420" filter="url(#grain)"/>
+  <use href="#sprig" transform="translate(48 55) rotate(-18) scale(.9)"/><use href="#coral" transform="translate(177 48) rotate(24) scale(.75)"/>
+  <use href="#tiny-flower" transform="translate(322 63) rotate(-4)"/><use href="#sprig" transform="translate(475 28) rotate(35) scale(.8)"/>
+  <use href="#coral" transform="translate(640 72) rotate(-24) scale(.9)"/><use href="#sprig" transform="translate(104 210) rotate(28) scale(.7)"/>
+  <use href="#tiny-flower" transform="translate(243 230) rotate(17) scale(.85)"/><use href="#coral" transform="translate(388 201) rotate(-8) scale(.7)"/>
+  <use href="#sprig" transform="translate(544 215) rotate(-26) scale(.9)"/><use href="#tiny-flower" transform="translate(680 225) rotate(14) scale(.75)"/>
+  <use href="#coral" transform="translate(62 363) rotate(17) scale(.72)"/><use href="#sprig" transform="translate(205 350) rotate(-28) scale(.82)"/>
+  <use href="#tiny-flower" transform="translate(352 365) rotate(-12)"/><use href="#coral" transform="translate(500 358) rotate(27) scale(.85)"/>
+  <use href="#sprig" transform="translate(650 350) rotate(12) scale(.72)"/>
+  <g fill="#fff" opacity=".75"><circle cx="150" cy="140" r="4"/><circle cx="280" cy="178" r="5"/><circle cx="583" cy="143" r="4"/><circle cx="457" cy="315" r="5"/><circle cx="35" cy="294" r="4"/></g>
+</svg>
