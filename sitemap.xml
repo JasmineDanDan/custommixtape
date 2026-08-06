@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://127.0.0.1:4173/</loc>
+    <loc>https://custommixtape.com/</loc>
     <lastmod>2026-08-06</lastmod>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/custom-j-cards/</loc>
+    <loc>https://custommixtape.com/custom-j-cards/</loc>
     <lastmod>2026-08-06</lastmod>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/privacy.html</loc>
+    <loc>https://custommixtape.com/privacy.html</loc>
     <lastmod>2026-08-06</lastmod>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/music-credits.html</loc>
+    <loc>https://custommixtape.com/music-credits.html</loc>
     <lastmod>2026-08-06</lastmod>
   </url>
   <url>
-    <loc>http://127.0.0.1:4173/contact.html</loc>
+    <loc>https://custommixtape.com/contact.html</loc>
     <lastmod>2026-08-06</lastmod>
   </url>
 </urlset>
