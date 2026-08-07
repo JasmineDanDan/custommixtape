@@ -116,7 +116,7 @@ function MixApp() {
     if(!state.generated) saveDraft('tape-note-mixtape-draft',state);
     if (state.generated) { giftView(sessionStorage.getItem('made-mixtape')==='1'); return; }
     root.innerHTML = `${commonHeader('mix')}
-      <section class="intro mix-intro"><div><h1>Make Your Own Mixtape</h1><p>Make your own mixtape in a few thoughtful steps: choose a look, add songs, and share a small musical gift.</p></div></section>
+      <section class="intro mix-intro"><div><h1><span class="mix-title-primary">Create Your Mixtape for You</span><span class="mix-title-secondary">— A Personalized Retro Cassette Card.</span></h1><p>Make your own mixtape in a few thoughtful steps: choose a look, add songs, and share a small musical gift.</p></div></section>
       <section class="workspace" id="mixtape-maker"><aside class="preview-column"><div class="preview-shell">${preview()}</div></aside>
       <section class="editor"><div class="step-tabs">${['Look','Stickers','Songs','Note'].map((name,i)=>`<button class="step-tab ${state.step===i?'active':''}" data-step="${i}" ${i===3&&!state.songs.length?'disabled aria-disabled="true" title="Choose at least one song first"':''}><small>${i+1}</small> ${name}</button>`).join('')}</div><div class="editor-panel">${panel()}</div>${actionBar()}</section></section>
       <section class="mix-howto" aria-labelledby="mix-howto-heading"><div class="mix-howto-heading"><div class="eyebrow">How to</div><h2 id="mix-howto-heading">A Mixtape for You, in three small moves.</h2><p>Make it for a birthday, a thank-you, a new beginning, or just because.</p></div><div class="mix-howto-steps"><article><span>01</span><h3>Set the mood</h3><p>Choose a cassette look and a few keepsake stickers that fit the occasion.</p></article><article><span>02</span><h3>Pick the soundtrack</h3><p>Listen to the previews, then arrange up to four songs in the order you want them heard.</p></article><article><span>03</span><h3>Write and share</h3><p>Add a short note, finish the gift, and send one link to the person it was made for.</p></article></div></section>
@@ -340,6 +340,114 @@ async function downloadJ(state,name,print) {
   const folds=print?`<path d="M660 0V1400M1320 0V1400" stroke="${t.ink}" stroke-width="2" stroke-dasharray="10 9" opacity=".55"/>`:'';
   await document.fonts.ready;
   downloadSvg(`<svg xmlns="http://www.w3.org/2000/svg" width="2480" height="1754" viewBox="0 0 1980 1400">${paper}${panels}${folds}<text x="130" y="190" font-family="Fraunces, Georgia, serif" font-size="58" font-weight="700" fill="${t.ink}">${titleText}</text><text x="130" y="${artistY}" font-family="DM Mono, monospace" font-size="25" fill="${t.ink}">${artistText}</text><text x="130" y="${metaY}" font-family="DM Mono, monospace" font-size="18" fill="${t.ink}" opacity=".72">${esc(recipientLabel)} &amp; ${esc(senderLabel)}</text><text x="760" y="205" font-family="DM Mono, monospace" font-size="28" font-weight="700" fill="${t.ink}">SIDE A</text><text x="760" y="255" font-family="DM Sans, Arial, sans-serif" font-size="28" fill="${t.ink}">${list(sideA,760)}</text><text x="1420" y="205" font-family="DM Mono, monospace" font-size="28" font-weight="700" fill="${t.ink}">SIDE B</text><text x="1420" y="255" font-family="DM Sans, Arial, sans-serif" font-size="28" fill="${t.ink}">${list(sideB,1420)}</text>${cover}<g transform="translate(0 ${noteY})"><rect x="700" width="570" height="${noteHeight}" rx="5" fill="#eadfc8" opacity=".28"/><text x="730" y="29" font-family="DM Mono, monospace" font-size="15" fill="${t.ink}" opacity=".68">${esc(recipientLabel.toUpperCase())}</text><text x="730" y="59" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="30" font-weight="600" fill="${t.ink}">${noteText}</text></g></svg>`,name);
+}
+
+function reorderJCardSections() {
+  const why = document.querySelector('.jcard-why');
+  const about = document.querySelector('.jcard-what-is');
+  if (why && about && why.compareDocumentPosition(about) & Node.DOCUMENT_POSITION_FOLLOWING) {
+    why.parentNode.insertBefore(about, why);
+  }
+}
+
+function updateJCardMarketingCopy() {
+  if (!isJCard) return;
+  reorderJCardSections();
+  const setText = (selector, text) => {
+    const element = document.querySelector(selector);
+    if (element && element.textContent !== text) element.textContent = text;
+  };
+  const setAll = (selector, texts) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      if (texts[index] && element.textContent !== texts[index]) element.textContent = texts[index];
+    });
+  };
+  const setIf = (selector, currentText, text) => {
+    const element = document.querySelector(selector);
+    if (element && element.textContent === currentText) element.textContent = text;
+  };
+
+  setText('.jcard-intro h1', 'Create a Cassette J Card Template');
+  setText('.jcard-intro p', 'Choose a cassette tape J card template, add your album details and tracks, then download a printable cassette insert.');
+  setText('.jcard-howto-heading h2', 'Build a Cassette J Card from a Template');
+  setText('.jcard-howto-heading p', 'Turn a thoughtful mixtape into a printable cassette card with a template made for one person.');
+  setAll('.jcard-howto-steps article h3', ['Choose a J Card Template', 'Write the Dedication', 'Add Tracks and Share']);
+  setAll('.jcard-howto-steps article p', [
+    'Pick a cassette J card template that suits the person, the music, or the occasion.',
+    'Add the album title, curator, recipient, sender, and a short note.',
+    'Arrange the tracks across Side A and B, then download or share the finished cassette J card.'
+  ]);
+  setText('.jcard-why h2', 'A Cassette J Card Makes the Gift Feel Real');
+  setText('.jcard-why > .jcard-section-heading > p', 'Give your mixtape a home with a cassette tape J card template that feels made for one person.');
+  setAll('.jcard-why-points article p', [
+    'Your title, artist, note, and track order become one considered cassette J card.',
+    'The dedication and songs turn a familiar format into a personal keepsake.',
+    'Download your printable design, tuck it into a case, or share the digital card.'
+  ]);
+  setText('.jcard-what-is h2', 'What Is a Cassette J Card?');
+  setAll('.jcard-what-is > div:last-child p', [
+    'A cassette J card is the folded paper insert inside a cassette case. It carries the album identity, track list, and details that make a mixtape feel like it belongs to someone.',
+    'Use this cassette tape J card template as a printable insert, a digital music gift, or a paper keepsake for another present.'
+  ]);
+  setAll('.jcard-faq summary', ['What will I receive from the J card template?', 'Do I need a real cassette?', 'Can I share my cassette J card digitally?', 'Can I also make a mixtape cassette card?']);
+  setAll('.jcard-faq details p', [
+    'The print version is a high-resolution PNG with quiet fold guides for cutting and folding.',
+    'No. The J card can be the gift itself, a music-themed note, or an insert for a real cassette case.',
+    'Yes. Preview the recipient view and copy a link that keeps the album details, dedication, and track list.',
+    'Yes. Use Make a mixtape for a playable cassette-style music gift.'
+  ]);
+  setIf('#j-panel .step-heading h2', 'Choose a background image', 'Choose a Cassette J Card Template');
+  setIf('#j-panel .step-heading span', 'Three J-card papers', 'Three printable template styles');
+  setIf('#j-panel .privacy-note', "Choose up to three keepsakes for the cassette's outer J-Card.", 'Choose up to three keepsakes for the cassette J card.');
+}
+
+function updateMixMarketingCopy() {
+  if (isJCard) return;
+  const setText = (selector, text) => {
+    const element = document.querySelector(selector);
+    if (element && element.textContent !== text) element.textContent = text;
+  };
+  const setAll = (selector, texts) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      if (texts[index] && element.textContent !== texts[index]) element.textContent = texts[index];
+    });
+  };
+
+  setText('.mix-intro p', 'Create a mixtape for someone special with a simple mixtape maker. Choose a cassette look, add songs, and share a personalized musical gift.');
+  setText('.mix-howto-heading h2', 'Make a Mixtape for You in Three Small Moves');
+  setText('.mix-howto-heading p', 'Use this cassette tape creator to turn a few thoughtful details into a personal music gift.');
+  setAll('.mix-howto-steps article p', [
+    'Choose a cassette design and a few stickers that fit the person, the music, or the occasion.',
+    'Use the mixtape maker to preview songs and arrange them in the order you want them heard.',
+    'Add a short note, finish your mixtape for you, and share one memorable gift link.'
+  ]);
+  setText('.mix-what-is h2', 'What Is a Mixtape for You?');
+  setAll('.mix-what-is > div:last-child p', [
+    'A mixtape for you is a small music gift with the care of a handmade cassette: a look, a short note, and songs arranged in a personal order.',
+    'Our cassette tape creator turns those details into a digital cassette card that someone special can open and play.'
+  ]);
+  setText('.mix-why h2', 'Why Make a Mixtape for You?');
+  setText('.mix-why > .mix-section-heading > p', 'A mixtape maker makes the gesture feel considered without making it complicated.');
+  setAll('.mix-why-points article p', [
+    'The songs, cassette look, and note all come from you, so the gift has a point of view.',
+    'Instead of sending a bare link, give someone a cassette card with an opening sequence and a message inside.',
+    'There is no account to set up. When your mixtape for you is ready, one link is enough to share it.'
+  ]);
+  setAll('.mix-faq summary', ['Does the recipient need an account?', 'Can the recipient play the songs?', 'Where does my mixtape live before I share it?', 'Can I make a matching cassette J card?']);
+  setAll('.mix-faq details p', [
+    'No. Anyone with the gift link can open your mixtape for you in a browser.',
+    'Yes. The shared gift keeps the selected openly licensed songs and their order. Playback starts after the recipient presses play.',
+    'Your mixtape stays in this browser while you make it. The gift link carries the card settings when you are ready to share.',
+    'Yes. Use Custom J cards to create a printable cassette insert with an album title, dedication, and track list.'
+  ]);
+}
+
+if (isJCard) {
+  const appRoot = document.querySelector('#app');
+  new MutationObserver(updateJCardMarketingCopy).observe(appRoot, { childList: true, subtree: true });
+} else {
+  const appRoot = document.querySelector('#app');
+  new MutationObserver(updateMixMarketingCopy).observe(appRoot, { childList: true, subtree: true });
 }
 
 isJCard ? JCardApp() : MixApp();

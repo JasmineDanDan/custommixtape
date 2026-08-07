@@ -28,8 +28,10 @@ button { cursor: pointer; }
 .language { font-family: "DM Mono", monospace; font-size: 12px; color: var(--muted); border: 0; background: none; }
 
 .intro { max-width: 1260px; margin: 0 auto; padding: 42px clamp(18px, 4vw, 34px) 26px; display: flex; justify-content: space-between; gap: 30px; align-items: end; }
-.mix-intro { padding-top:30px; padding-bottom:16px; }
-.mix-intro h1 { margin-top:0; }
+.mix-intro { padding-top:30px; padding-bottom:18px; }
+.mix-intro h1 { max-width:900px; margin-top:0; margin-bottom:14px; font-size:clamp(39px,4.25vw,58px); line-height:1.04; }
+.mix-title-primary,.mix-title-secondary { display:block; }
+.mix-title-secondary { margin-top:7px; color:var(--brick); font-size:.66em; font-weight:600; line-height:1.16; }
 .eyebrow { color: var(--brick); font-family: "DM Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
 h1 { font: 700 clamp(36px, 5vw, 64px)/1.02 "Fraunces", serif; margin: 9px 0 12px; letter-spacing: 0; max-width: 740px; }
 .intro p { max-width: 610px; margin: 0; color: var(--muted); font-size: 17px; line-height: 1.5; }
@@ -197,9 +199,10 @@ h1 { font: 700 clamp(36px, 5vw, 64px)/1.02 "Fraunces", serif; margin: 9px 0 12px
 .mix-section-heading,.mix-howto-heading { max-width:610px; }.mix-section-heading h2,.mix-howto-heading h2,.mix-what-is h2,.mix-faq-heading h2 { margin:6px 0 8px; font:700 32px/1.12 "Fraunces",serif; }.mix-section-heading p,.mix-howto-heading p { margin:0; color:var(--muted); line-height:1.55; }
 .mix-howto-steps,.mix-why-points { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:30px; }.mix-howto-steps article,.mix-why-points article { min-width:0; padding:0 24px; border-left:1px solid var(--line); }.mix-howto-steps article:first-child,.mix-why-points article:first-child { padding-left:0; border-left:0; }.mix-howto-steps span { color:var(--brick); font:11px "DM Mono",monospace; letter-spacing:.08em; }.mix-howto-steps h3,.mix-why-points h3 { margin:8px 0 7px; font:700 18px/1.15 "Fraunces",serif; }.mix-howto-steps p,.mix-why-points p { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
 .mix-what-is,.mix-faq { display:grid; grid-template-columns:.72fr 1.28fr; gap:60px; }.mix-what-is p { margin:0 0 13px; color:var(--muted); line-height:1.65; }.mix-what-is p:last-child { margin-bottom:0; }.mix-faq-heading { max-width:330px; }.mix-faq .faq { align-self:start; }.mix-faq .faq a { color:var(--ink); font-weight:700; text-underline-offset:3px; }
-.jcard-howto { max-width:1192px; margin:0 auto; padding:42px clamp(18px,4vw,34px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }.jcard-howto-heading { max-width:560px; }.jcard-howto h2 { margin:6px 0 7px; font:700 30px/1.1 "Fraunces",serif; }.jcard-howto-heading p { margin:0; color:var(--muted); line-height:1.55; }.jcard-howto-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:28px; }.jcard-howto-steps article { min-width:0; padding:0 24px; border-left:1px solid var(--line); }.jcard-howto-steps article:first-child { padding-left:0; border-left:0; }.jcard-howto-steps span { color:var(--brick); font:11px "DM Mono",monospace; letter-spacing:.08em; }.jcard-howto-steps h3 { margin:8px 0 7px; font:700 18px/1.15 "Fraunces",serif; }.jcard-howto-steps p { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
+@media (min-width:1000px) { .mix-intro p,.mix-section-heading p,.mix-howto-heading p { max-width:900px; white-space:nowrap; }.mix-section-heading,.mix-howto-heading { max-width:900px; }.mix-howto-heading h2 { white-space:nowrap; } }
+.jcard-howto { max-width:1192px; margin:0 auto; padding:42px clamp(18px,4vw,34px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }.jcard-howto-heading { max-width:900px; }.jcard-howto h2 { margin:6px 0 7px; font:700 30px/1.1 "Fraunces",serif; }.jcard-howto-heading p { max-width:900px; margin:0; color:var(--muted); line-height:1.55; white-space:nowrap; }.jcard-howto-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:28px; }.jcard-howto-steps article { min-width:0; padding:0 24px; border-left:1px solid var(--line); }.jcard-howto-steps article:first-child { padding-left:0; border-left:0; }.jcard-howto-steps span { color:var(--brick); font:11px "DM Mono",monospace; letter-spacing:.08em; }.jcard-howto-steps h3 { margin:8px 0 7px; font:700 18px/1.15 "Fraunces",serif; }.jcard-howto-steps p { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
 .jcard-why,.jcard-what-is,.jcard-faq { max-width:1192px; margin:0 auto; padding:48px clamp(18px,4vw,34px); border-bottom:1px solid var(--line); }
-.jcard-section-heading { max-width:610px; }.jcard-section-heading h2,.jcard-what-is h2,.jcard-faq-heading h2 { margin:6px 0 8px; font:700 32px/1.12 "Fraunces",serif; }.jcard-section-heading p { margin:0; color:var(--muted); line-height:1.55; }
+.jcard-section-heading { max-width:900px; }.jcard-section-heading h2,.jcard-what-is h2,.jcard-faq-heading h2 { margin:6px 0 8px; font:700 32px/1.12 "Fraunces",serif; }.jcard-section-heading p { max-width:900px; margin:0; color:var(--muted); line-height:1.55; white-space:nowrap; }
 .jcard-why-points { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:30px; }.jcard-why-points article { min-width:0; padding:0 24px; border-left:1px solid var(--line); }.jcard-why-points article:first-child { padding-left:0; border-left:0; }.jcard-why-points h3 { margin:0 0 7px; font:700 18px/1.15 "Fraunces",serif; }.jcard-why-points p { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
 .jcard-what-is,.jcard-faq { display:grid; grid-template-columns:.72fr 1.28fr; gap:60px; }.jcard-what-is p { margin:0 0 13px; color:var(--muted); line-height:1.65; }.jcard-what-is p:last-child { margin-bottom:0; }.jcard-faq-heading { max-width:330px; }.jcard-faq .faq { align-self:start; }.jcard-faq .faq a { color:var(--ink); font-weight:700; text-underline-offset:3px; }
 
@@ -268,14 +271,15 @@ h1 { font: 700 clamp(36px, 5vw, 64px)/1.02 "Fraunces", serif; margin: 9px 0 12px
 .site-footer-links { display:flex; gap:14px; }
 .jcard-workspace .field input,.jcard-workspace .field textarea,.jcard-workspace .field select { width:100%; padding:10px 11px; border:1px solid var(--line); border-radius:4px; color:var(--ink); background:#fffefa; outline:none; }
 .jcard-intro { padding-top:24px; padding-bottom:14px; }
-.jcard-intro h1 { margin-top:0; font-size:clamp(36px,4vw,54px); }
-.jcard-intro p { font-size:15px; }
+.jcard-intro h1 { max-width:900px; margin-top:0; font-size:clamp(36px,4vw,54px); }
+.jcard-intro p { max-width:900px; font-size:15px; }
 .jcard-action-bar { justify-content:flex-start; }
 .jcard-workspace .editor-panel { min-height:auto; }
 .jcard-workspace .field textarea { min-height:98px; }
 .jcard-workspace .field input:focus,.jcard-workspace .field textarea:focus,.jcard-workspace .field select:focus { border-color:var(--brick); box-shadow:0 0 0 3px rgba(188,93,74,.12); }
 
 @media (min-width:821px) {
+  .jcard-intro p { white-space:nowrap; }
   .jcard-workspace .preview-column { padding-top:60px; }
   .jcard-workspace .template-option { min-height:96px; padding:13px 14px 13px 112px; }
   .jcard-workspace .template-swatch { left:12px; top:12px; width:82px; height:70px; }
@@ -286,7 +290,7 @@ h1 { font: 700 clamp(36px, 5vw, 64px)/1.02 "Fraunces", serif; margin: 9px 0 12px
 .track-inputs { display:grid; grid-template-columns:1fr 1fr; gap:14px; }.track-box { border:1px solid var(--line); padding:12px; border-radius:5px; }.track-box h3 { margin:0 0 8px; font:700 13px "Fraunces",serif; }.track-box input { width:100%; padding:8px; border:0; border-bottom:1px solid var(--line); background:transparent; margin-top:3px; font-size:12px; outline:none; }.track-box input:focus { border-color:var(--brick); }
 
 @media (max-width: 820px) { .site-header { height:60px; }.site-nav { gap:13px; }.site-nav a { font-size:12px; }.language { display:none; }.intro { padding-top:27px; display:block; }.mix-intro { padding-top:22px; padding-bottom:14px; }.intro-note { margin-top:16px; }.workspace { grid-template-columns:1fr; padding-bottom:28px; }.preview-column { position:relative; top:auto; }.preview-shell { padding:12px; }.editor-panel { padding:17px; min-height: 385px; }.mix-howto-steps,.mix-why-points { grid-template-columns:1fr; gap:20px; }.mix-howto-steps article,.mix-why-points article { padding:20px 0 0; border-top:1px solid var(--line); border-left:0; }.mix-howto-steps article:first-child,.mix-why-points article:first-child { padding-top:0; border-top:0; }.mix-what-is,.mix-faq { grid-template-columns:1fr; gap:24px; }.jcard-howto-steps { grid-template-columns:1fr; gap:20px; }.jcard-howto-steps article { padding:20px 0 0; border-top:1px solid var(--line); border-left:0; }.jcard-howto-steps article:first-child { padding-top:0; border-top:0; }.details { padding-top:38px; }.details-grid { grid-template-columns:1fr; gap:22px; }.artboard { aspect-ratio:1.25; }.field-grid,.track-inputs { grid-template-columns:1fr; }.field.full { grid-column:auto; } }
-@media (max-width: 820px) { .jcard-why-points { grid-template-columns:1fr; gap:20px; }.jcard-why-points article { padding:20px 0 0; border-top:1px solid var(--line); border-left:0; }.jcard-why-points article:first-child { padding-top:0; border-top:0; }.jcard-what-is,.jcard-faq { grid-template-columns:1fr; gap:24px; } }
+@media (max-width: 820px) { .jcard-why-points { grid-template-columns:1fr; gap:20px; }.jcard-why-points article { padding:20px 0 0; border-top:1px solid var(--line); border-left:0; }.jcard-why-points article:first-child { padding-top:0; border-top:0; }.jcard-howto-heading p,.jcard-section-heading p { white-space:normal; }.jcard-what-is,.jcard-faq { grid-template-columns:1fr; gap:24px; } }
 @media (max-width: 540px) {
   body { overflow-x:hidden; }
   .site-header { padding:0 14px; }
