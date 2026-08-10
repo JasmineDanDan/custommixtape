@@ -113,12 +113,12 @@ h1 { font: 700 clamp(36px, 5vw, 64px)/1.02 "Fraunces", serif; margin: 9px 0 12px
 .note-from small { color:#7b94a2; font:10px "DM Mono",monospace; letter-spacing:.06em; text-transform:uppercase; }
 .note-from b { min-width:0; max-width:calc(100% - 42px); overflow:hidden; color:#6b7f87; font:600 12px/1.1 "DM Sans",sans-serif; text-overflow:ellipsis; white-space:nowrap; }
 .little-note-card p { margin:0; font-size:15px; line-height:1.6; overflow-wrap:anywhere; }
-.final-gift { justify-content:flex-start; gap:14px; min-height:560px; padding:34px 30px 40px; }
+.final-gift { --gift-object-width:min(76%, 430px); justify-content:flex-start; gap:14px; min-height:560px; padding:34px 30px 40px; }
 .final-gift .little-note-card { z-index:4; width:min(64%, 310px); min-height:124px; margin-bottom:-38px; padding:20px 24px 14px 45px; transform:rotate(-2deg); box-shadow:0 12px 24px rgba(53,70,78,.19); }
 .final-gift .little-note-card p { font-size:14px; line-height:1.58; }
-.final-gift .jcase { z-index:2; width:min(76%, 430px); transform:perspective(1400px) rotateX(.5deg) rotateZ(-.4deg); }
-.gift-cassette-player { position:relative; z-index:3; width:min(66%, 350px); aspect-ratio:1.82; margin-top:-8px; filter:drop-shadow(0 13px 18px rgba(49,72,76,.18)); }
-.gift-player-stack { position:relative; z-index:3; width:min(78%, 410px); display:grid; gap:12px; justify-items:center; }
+.final-gift .jcase { z-index:2; width:var(--gift-object-width); transform:perspective(1400px) rotateX(.5deg) rotateZ(-.4deg); }
+.gift-cassette-player { position:relative; z-index:3; width:100%; aspect-ratio:1.92; margin-top:-8px; filter:drop-shadow(0 13px 18px rgba(49,72,76,.18)); }
+.gift-player-stack { position:relative; z-index:3; width:min(69%, 390px); display:grid; gap:12px; justify-items:center; }
 .gift-player-stack .gift-cassette-player { width:100%; }
 .gift-track-list { width:100%; display:grid; gap:5px; padding:8px; background:rgba(255,253,248,.76); border:1px solid rgba(63,83,87,.15); border-radius:8px; text-align:left; }
 .gift-track-button { display:grid; grid-template-columns:22px 1fr auto; align-items:center; gap:8px; min-height:32px; padding:5px 8px; border:0; border-radius:5px; color:#39494d; background:transparent; text-align:left; }
@@ -330,9 +330,9 @@ h1 { font: 700 clamp(36px, 5vw, 64px)/1.02 "Fraunces", serif; margin: 9px 0 12px
   .final-gift { min-height:0; padding:24px 4px 30px; gap:8px; }
   .final-gift .little-note-card { width:88%; min-height:110px; margin-bottom:-30px; padding:17px 20px 12px 40px; }
   .final-gift .little-note-card p { font-size:13px; }
-  .final-gift .jcase { width:91%; }
-  .gift-cassette-player { width:82%; margin-top:-4px; }
-  .gift-player-stack { width:96%; }
+  .final-gift { --gift-object-width:91%; }
+  .gift-cassette-player { margin-top:-4px; }
+  .gift-player-stack { width:83%; }
   .share-panel div { grid-template-columns:1fr; }
   .details { padding:38px 16px 55px; }
   .details h2 { font-size:28px; }
