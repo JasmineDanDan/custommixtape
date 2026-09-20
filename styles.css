@@ -360,6 +360,12 @@ h1 { font: 700 clamp(36px, 5vw, 64px)/1.02 "Fraunces", serif; margin: 9px 0 12px
 .legal-page h2 { margin:0 0 9px; font:700 23px/1.15 "Fraunces",serif; }
 .legal-page p { max-width:680px; margin:0 0 12px; color:var(--muted); line-height:1.7; }
 .legal-page p:last-child { margin-bottom:0; }
+.legal-page ul { max-width:680px; margin:0; padding-left:22px; color:var(--muted); line-height:1.7; }
+.legal-page li + li { margin-top:8px; }
+.legal-page details { padding:18px 0; border-top:1px solid var(--line); }
+.legal-page details:last-child { border-bottom:1px solid var(--line); }
+.legal-page summary { cursor:pointer; color:var(--ink); font-weight:700; }
+.legal-page details p { margin-top:12px; }
 
 @media (max-width: 820px) {
   .jcard-workspace .preview-column { position:sticky; top:60px; z-index:12; padding:6px 0; background:var(--paper); }

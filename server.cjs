@@ -17,13 +17,16 @@ const types = {
   ".txt": "text/plain"
 };
 
+const port = Number(process.env.PORT) || 4173;
+
 http.createServer((request, response) => {
   const requested = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
   const relative = requested === "/" ? "index.html" : requested.replace(/^\/+/, "");
   let file = path.resolve(root, relative);
   if (!file.startsWith(root)) return response.writeHead(403).end();
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
+  if (!fs.existsSync(file) && !path.extname(file) && fs.existsSync(`${file}.html`)) file = `${file}.html`;
   if (!fs.existsSync(file)) return response.writeHead(404).end("Not found");
   response.writeHead(200, { "Content-Type": types[path.extname(file)] || "application/octet-stream" });
   fs.createReadStream(file).pipe(response);
-}).listen(4173, "127.0.0.1", () => console.log("http://127.0.0.1:4173"));
+}).listen(port, "127.0.0.1", () => console.log(`http://127.0.0.1:${port}`));
