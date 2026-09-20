@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://custommixtape.com/sitemap.xml
+Sitemap: https://www.custommixtape.com/sitemap.xml
