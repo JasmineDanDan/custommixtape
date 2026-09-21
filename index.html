@@ -3,22 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Make a personalized mixtape for someone special. Choose your tape color, add stickers, bows, and decorations — then share it as a beautiful digital cassette card. Create yours free now." />
+    <meta name="description" content="Create a free personalized mixtape in 3 steps: customize a retro cassette card, add up to 4 songs and a personal note, then share your digital gift online." />
     <meta name="theme-color" content="#f8f5ed" />
     <link rel="canonical" href="https://www.custommixtape.com/" />
     <link rel="icon" href="./assets/tape-note-favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="./assets/gift-meadow-linen-v2.webp" fetchpriority="high" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.custommixtape.com/" />
-    <meta property="og:title" content="Make Your Own Mixtape | Tape Note" />
-    <meta property="og:description" content="A small musical gift made from a cassette look, a few songs and a note." />
+    <meta property="og:title" content="Mixtape for You | Custom Mixtape" />
+    <meta property="og:description" content="Create a free personalized mixtape in 3 steps with songs, a personal note, and a retro cassette card." />
     <meta property="og:image" content="https://www.custommixtape.com/assets/tape-note-social-preview-og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Make Your Own Mixtape | Tape Note" />
-    <meta name="twitter:description" content="A small musical gift made from a cassette look, a few songs and a note." />
+    <meta name="twitter:title" content="Mixtape for You | Custom Mixtape" />
+    <meta name="twitter:description" content="Create a free personalized mixtape in 3 steps with songs, a personal note, and a retro cassette card." />
     <meta name="twitter:image" content="https://www.custommixtape.com/assets/tape-note-social-preview-og.png" />
-    <title>Mixtape for You — Create a Custom Retro Cassette Card with Stickers & Decorations Online</title>
+    <title>Mixtape for You — Free Custom Cassette Card Maker Online</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
@@ -26,7 +27,7 @@
   </head>
   <body>
     <main id="app">
-      <section class="seo-fallback" aria-label="Tape Note mixtape maker">
+      <section class="seo-fallback" aria-label="Custom Mixtape mixtape maker">
         <h1>Create Your Mixtape for You - A Personalized Retro Cassette Card</h1>
         <p>Create a mixtape for someone special with a simple mixtape maker. Choose a cassette look, add songs, and share a personalized musical gift.</p>
         <section aria-labelledby="seo-howto-heading">
@@ -53,7 +54,10 @@
           <p>No. Anyone with the gift link can open your mixtape for you in a browser.</p>
           <h3>Can the recipient play the songs?</h3>
           <p>Yes. The shared gift keeps the selected openly licensed songs and their order.</p>
-          <p>Make a matching <a href="custom-j-cards">cassette J card</a> with an album title, dedication, and track list.</p>
+          <h3>Where does my mixtape live before I share it?</h3>
+          <p>Your mixtape stays in this browser while you make it. The gift link carries the card settings when you are ready to share.</p>
+          <h3>Can I make a matching cassette J card?</h3>
+          <p>Yes. Use <a href="custom-j-cards">Custom J cards</a> to create a printable cassette insert with an album title, dedication, and track list.</p>
         </section>
       </section>
     </main>
@@ -61,12 +65,76 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Tape Note",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Web",
-        "description": "Create and share a small cassette-style musical gift.",
-        "url": "https://www.custommixtape.com/"
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "name": "Custom Mixtape",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Web",
+            "description": "Create a free personalized mixtape in 3 steps: customize a retro cassette card, add up to 4 songs and a personal note, then share your digital gift online.",
+            "url": "https://www.custommixtape.com/"
+          },
+          {
+            "@type": "HowTo",
+            "name": "How to make a personalized digital mixtape",
+            "description": "Create and share a free personalized mixtape in three steps.",
+            "totalTime": "PT5M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Customize your cassette",
+                "text": "Choose a cassette design and a few stickers that fit the person, the music, or the occasion."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Add songs and a personal note",
+                "text": "Use the mixtape maker to preview songs, arrange them in the order you want them heard, and write a short message."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Share your digital gift",
+                "text": "Finish your mixtape for you and send one memorable gift link."
+              }
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Does the recipient need an account?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Anyone with the gift link can open your mixtape for you in a browser."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can the recipient play the songs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The shared gift keeps the selected openly licensed songs and their order. Playback starts only after the recipient chooses to press play."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where does my mixtape live before I share it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your mixtape stays in this browser while you make it. The gift link carries the card settings when you are ready to share."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I make a matching cassette J card?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Use Custom J cards to create a printable cassette insert with an album title, dedication, and track list."
+                }
+              }
+            ]
+          }
+        ]
       }
     </script>
   </body>
